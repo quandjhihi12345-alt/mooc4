@@ -1,29 +1,63 @@
-/* --- Đoạn này là CSS Mobile có sẵn của khóa học --- */
+/* ==========================================================================
+   1. GIAO DIỆN MẶC ĐỊNH CHO MOBILE (Một khối nằm ngang/Dọc toàn màn hình)
+   ========================================================================== */
 body {
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
 }
-/* ... code mobile khác ... */
+
+header {
+    margin-bottom: 30px;
+}
+
+/* Định dạng các khối div mặc định trên Mobile */
+div.box {
+    width: 100%;             /* Chiếm hết chiều rộng trên điện thoại */
+    display: block;          /* Xếp dọc theo mặc định */
+    margin-bottom: 20px;
+    background: white;
+    padding: 15px;
+    box-sizing: border-box;  /* Đảm bảo không bị vỡ hàng khi tính padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Định dạng hình ảnh mặc định */
+img {
+    width: 100%;             /* Ảnh co giãn theo div */
+    height: auto;
+    border-radius: 4px;
+}
 
 
-/* --- ĐOẠN BẠN CẦN THÊM VÀO DƯỚI CÙNG --- */
-
-/* Query #1: Tablet View */
+/* ==========================================================================
+   2. QUERY #1: TABLET VIEW (Kích hoạt từ 772px trở lên)
+   ========================================================================== */
 @media (min-width: 772px) {
-  div {
-    width: 45vw;
-    display: inline-block; 
-    vertical-align: top;   
-  }
-  img {
-    max-height: 30vh;      
-    width: auto;           
-  }
+    div.box {
+        width: 45vw;         /* Đổi chiều rộng div thành 45% viewport width */
+        display: inline-block; /* Thay đổi display để các div có thể xếp ngang */
+        vertical-align: top;   /* Căn thẳng hàng từ phía đỉnh khối */
+        margin: 1%;          /* Tạo khoảng cách nhỏ giữa các khối */
+    }
+
+    img {
+        max-height: 30vh;    /* Chiều cao ảnh không quá 30% viewport height */
+        width: auto;         /* Giữ nguyên tỉ lệ ảnh không bị méo */
+    }
 }
 
-/* Query #2: Large Screen View */
+
+/* ==========================================================================
+   3. QUERY #2: LARGE SCREEN VIEW (Kích hoạt từ 998px trở lên)
+   ========================================================================== */
 @media (min-width: 998px) {
-  div {
-    width: 30vw; 
-  }
+    div.box {
+        width: 30vw;         /* Thu nhỏ div còn 30% viewport width để dàn 3 cột */
+        margin: 1%;
+    }
+    /* Không cần thay đổi gì khác đối với hình ảnh */
 }
