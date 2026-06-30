@@ -1,59 +1,36 @@
-/* ==========================================================================
-   1. MOBILE VIEW (Mặc định - One Horizontal Div)
-   ========================================================================== */
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #eeeeee;
-    text-align: center;
+/* --- Your existing mobile styles are above this line --- */
+
+/* ==========================================
+   Query #1: Tablet View (Triggers at 772px)
+   ========================================== */
+@media screen and (min-width: 772px) {
+  /* 
+     To get divs to sit side-by-side instead of stacking, 
+     we change their display behavior. Using float or inline-block 
+     works, but flexbox is the most modern approach. 
+  */
+  .container { /* Assumes your HTML has a wrapper container */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  div {
+    width: 45vw; /* Sets div width to 45% of the viewport width */
+    /* Alternatively, if using standard percentages: width: 45%; */
+  }
+
+  img {
+    max-height: 30vh; /* Limits image height to 30% of viewport height */
+  }
 }
 
-header {
-    margin-bottom: 20px;
-}
-
-/* Trên mobile, các div chiếm 100% chiều rộng để xếp dọc */
-div.card {
-    width: 100%;
-    display: block;
-    background: #ffffff;
-    margin-bottom: 15px;
-    padding: 15px;
-    box-sizing: border-box;
-}
-
-img {
-    width: 100%;
-    height: auto;
-}
-
-
-/* ==========================================================================
-   2. QUERY #1: TABLET VIEW (Kích hoạt từ 772px)
-   ========================================================================== */
-@media (min-width: 772px) {
-    div.card {
-        width: 45vw;           /* Divs are 45% of viewport width */
-        display: inline-block; /* Thay đổi display để chuyển thành hàng ngang */
-        vertical-align: top;
-        margin: 1%;
-    }
-
-    img {
-        max-height: 30vh;      /* Images are no more than 30% of viewport height */
-        width: auto;           /* Giữ tỉ lệ ảnh */
-    }
-}
-
-
-/* ==========================================================================
-   3. QUERY #2: LARGE SCREEN VIEW (Kích hoạt từ 998px)
-   ========================================================================== */
-@media (min-width: 998px) {
-    div.card {
-        width: 30vw;           /* Divs are 30% of viewport width */
-        margin: 1%;
-    }
-    /* Giữ nguyên các thuộc tính khác không lặp lại */
+/* ==========================================
+   Query #2: Large Screen View (Triggers at 998px)
+   ========================================== */
+@media screen and (min-width: 998px) {
+  div {
+    width: 30vw; /* Changes div width to 30% of the viewport width */
+    /* Alternatively, if using standard percentages: width: 30%; */
+  }
 }
