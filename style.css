@@ -1,36 +1,77 @@
-/* --- Your existing mobile styles are above this line --- */
+/* ==========================================
+   1. MOBILE VIEW (Mặc định - Dưới 772px)
+   Hiển thị dạng 1 hàng dọc đứng, tràn màn hình
+   ========================================== */
+* {
+  box-sizing: border-box; /* Giúp padding/border không làm vỡ độ rộng layout */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+/* Container mặc định xếp dọc các phần tử trên Mobile */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Các khối div mặc định chiếm full chiều rộng */
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%; /* Mobile: 1 horizontal div (chiếm hết hàng) */
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.card h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
 
 /* ==========================================
-   Query #1: Tablet View (Triggers at 772px)
+   2. QUERY #1: TABLET VIEW (Từ 772px trở lên)
+   Chuyển thành 2 hàng ngang (các div chiếm 45%)
    ========================================== */
 @media screen and (min-width: 772px) {
-  /* 
-     To get divs to sit side-by-side instead of stacking, 
-     we change their display behavior. Using float or inline-block 
-     works, but flexbox is the most modern approach. 
-  */
-  .container { /* Assumes your HTML has a wrapper container */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  .container {
+    flex-direction: row; /* Chuyển từ dọc sang hàng ngang */
+    flex-wrap: wrap;     /* Cho phép các div tự động xuống hàng nếu thiếu chỗ */
+    justify-content: center;
   }
 
-  div {
-    width: 45vw; /* Sets div width to 45% of the viewport width */
-    /* Alternatively, if using standard percentages: width: 45%; */
+  .card {
+    width: 45vw; /* Yêu cầu đề bài: Đổi div thành 45% viewport width */
   }
 
-  img {
-    max-height: 30vh; /* Limits image height to 30% of viewport height */
+  .card img {
+    max-height: 30vh; /* Yêu cầu đề bài: Ảnh không quá 30% viewport height */
+    object-fit: cover; /* Giúp ảnh không bị méo khi giới hạn chiều cao */
   }
 }
 
+
 /* ==========================================
-   Query #2: Large Screen View (Triggers at 998px)
+   3. QUERY #2: LARGE SCREEN VIEW (Từ 998px trở lên)
+   Chuyển thành 3 hàng ngang (các div chiếm 30%)
    ========================================== */
 @media screen and (min-width: 998px) {
-  div {
-    width: 30vw; /* Changes div width to 30% of the viewport width */
-    /* Alternatively, if using standard percentages: width: 30%; */
+  .card {
+    width: 30vw; /* Yêu cầu đề bài: Đổi div thành 30% viewport width */
   }
 }
