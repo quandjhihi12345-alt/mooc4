@@ -1,39 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Responsive Website</title>
+    <title>Responsive Website Assignment</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Responsive Layout Project</h1>
-        <p>Resize your browser window to test the media queries.</p>
-    </header>
-
-    <main class="wrapper">
+    <!-- Container bao quanh để kích hoạt Flexbox khi lên màn hình lớn -->
+    <div class="container">
         
+        <!-- Khối thứ nhất -->
         <div class="card">
-            <h2>View 1</h2>
-            <img src="https://picsum.photos/400/300?random=1" alt="Beautiful landscape view 1">
-            <p>This layout transitions from one horizontal block on mobile, to two blocks on tablet, and finally to three blocks on larger screens.</p>
+            <img src="https://picsum.photos/400/300?random=1" alt="Hình ảnh minh họa 1">
+            <h2>Khối Nội Dung 1</h2>
+            <p>Đây là nội dung hiển thị bên trong div thứ nhất. Trên mobile nó sẽ chiếm toàn màn hình, trên tablet chiếm 45% và trên desktop chiếm 30%.</p>
         </div>
 
+        <!-- Khối thứ hai -->
         <div class="card">
-            <h2>View 2</h2>
-            <img src="https://picsum.photos/400/300?random=2" alt="Beautiful landscape view 2">
-            <p>This layout transitions from one horizontal block on mobile, to two blocks on tablet, and finally to three blocks on larger screens.</p>
+            <img src="https://picsum.photos/400/300?random=2" alt="Hình ảnh minh họa 2">
+            <h2>Khối Nội Dung 2</h2>
+            <p>Đây là nội dung hiển thị bên trong div thứ hai. Các media query sẽ tự động thay đổi kích thước dựa trên độ rộng của trình duyệt.</p>
         </div>
 
+        <!-- Khối thứ ba -->
         <div class="card">
-            <h2>View 3</h2>
-            <img src="https://picsum.photos/400/300?random=3" alt="Beautiful landscape view 3">
-            <p>This layout transitions from one horizontal block on mobile, to two blocks on tablet, and finally to three blocks on larger screens.</p>
+            <img src="https://picsum.photos/400/300?random=3" alt="Hình ảnh minh họa 3">
+            <h2>Khối Nội Dung 3</h2>
+            <p>Đây là nội dung hiển thị bên trong div thứ ba. Hãy kéo giãn trình duyệt của bạn để kiểm tra các điểm gãy (breakpoints) hoạt động.</p>
         </div>
 
-    </main>
+    </div>
 
 </body>
 </html>
